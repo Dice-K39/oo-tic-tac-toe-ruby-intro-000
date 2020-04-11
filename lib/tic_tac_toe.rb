@@ -41,6 +41,18 @@ class TicTacToe
     end
   end
   
+  def turn
+    index = gets.strip
+    converted_index = input_to_index(index)
+  
+    if valid_move?(converted_index) == true
+      move(converted_index, current_player)
+      display_board
+    else
+      turn
+    end
+  end
+  
   def turn_count
     counter = 0
   
@@ -65,17 +77,7 @@ class TicTacToe
     player
   end
   
-  def turn
-    index = gets.strip
-    converted_index = input_to_index(index)
   
-    if valid_move?(converted_index) == true
-      move(converted_index, current_player)
-      display_board
-    else
-      turn
-    end
-  end
   
   def draw?
     if won? == false && full? == true
