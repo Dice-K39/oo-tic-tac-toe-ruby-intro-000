@@ -64,9 +64,26 @@ class TicTacToe
   
     player
   end
+  
+  def turn
+    index = gets.strip
+    converted_index = input_to_index(index)
+  
+    if valid_move?(converted_index) == true
+      move(board, converted_index, current_player
+      display_board
+    else
+      turn
+    end
+  end
 
 
 end
+
+
+
+
+
 
 
 
