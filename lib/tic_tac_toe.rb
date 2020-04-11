@@ -88,11 +88,11 @@ class TicTacToe
       slot_3 = @board[win_index_3]
     
       if slot_1 == slot_2 && slot_2 == slot_3 && position_taken?(win_index_1)
-        return win_combination
+        win_combination
       end
     end
   
-    return false
+    false
   end
   
   def full?
@@ -109,13 +109,13 @@ class TicTacToe
   
   def over?
     if won? || draw? || full?
-      return true
+      true
     end
   end
   
   def winner
     if won?
-      return @board[won?].to_i
+      @board[won?].to_i
     end
   end
 
