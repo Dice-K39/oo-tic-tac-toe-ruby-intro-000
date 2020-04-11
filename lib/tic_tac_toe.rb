@@ -90,6 +90,75 @@ end
 
 
 
+def won?(board)
+  WIN_COMBINATIONS.each do |win_combination|
+    win_index_1 = win_combination[0]
+    win_index_2 = win_combination[1]
+    win_index_3 = win_combination[2]
+    
+    slot_1 = board[win_index_1]
+    slot_2 = board[win_index_2]
+    slot_3 = board[win_index_3]
+    
+    if slot_1 == slot_2 && slot_2 == slot_3 && position_taken?(board, win_index_1)
+      return win_combination
+    end
+  end
+  
+  return false
+end
+
+def full?(board)
+  board.all? {|i| i == "X" || i == "O"}
+end
+
+
+
+def over?(board)
+  if won?(board) || draw?(board) || full?(board)
+    return true
+  end
+end
+
+def winner(board)
+  if won?(board)
+    return board[won?(board)[0]]
+  end
+end
+
+def play(board)
+  until over?(board) == true
+    puts "Please select a number 1-9: "
+    
+    turn(board)
+  end
+  
+  if winner(board) == "X"
+    puts "Congratulations X!"
+  elsif winner(board) == "O"
+    puts "Congratulations O!"
+  else
+    puts "Cat's Game!"
+  end
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
