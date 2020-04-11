@@ -44,10 +44,10 @@ class TicTacToe
   def turn
     index = gets.strip
     converted_index = input_to_index(index)
-    display_board
   
     if valid_move?(converted_index) == true
       move(converted_index, current_player)
+      display_board
     else
       turn
     end
@@ -121,7 +121,6 @@ class TicTacToe
   
   def play
     until over? == true
-      display_board
       puts "Please select a number 1-9:"
       
       turn
