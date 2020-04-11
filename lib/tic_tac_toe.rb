@@ -118,8 +118,22 @@ class TicTacToe
       return @board[won?[0]]
     end
   end
-
-
+  
+  def play
+    until over? == true
+      puts "Please select a number 1-9: "
+    
+      turn
+    end
+  
+    if winner == "X"
+      puts "Congratulations X!"
+    elsif winner == "O"
+      puts "Congratulations O!"
+    else
+      puts "Cat's Game!"
+    end
+  end
 end
 
 
