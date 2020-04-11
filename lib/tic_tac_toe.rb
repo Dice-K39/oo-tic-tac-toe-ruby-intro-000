@@ -121,9 +121,9 @@ class TicTacToe
   
   def play
     until over? == true
-      turn
+      puts "Please select a number 1-9:"
       
-      puts "Please select a number 1-9: "
+      turn
     end
   
     if winner == "X"
