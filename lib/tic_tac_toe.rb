@@ -127,7 +127,7 @@ class TicTacToe
       turn
     end
   
-    display_board
+    #display_board
     
     if winner == "X"
       puts "Congratulations X!"
