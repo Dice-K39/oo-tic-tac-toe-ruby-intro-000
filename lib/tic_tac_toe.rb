@@ -121,13 +121,12 @@ class TicTacToe
   
   def play
     until over? == true
-      display_board
       puts "Please select a number 1-9:"
       
       turn
     end
   
-    #display_board
+    display_board
     
     if winner == "X"
       puts "Congratulations X!"
