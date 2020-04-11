@@ -126,6 +126,8 @@ class TicTacToe
       turn
     end
   
+    display_board
+    
     if winner == "X"
       puts "Congratulations X!"
     elsif winner == "O"
